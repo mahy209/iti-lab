@@ -1,0 +1,88 @@
+<html>
+    <head>
+        <title> Character Game</title>
+        <style>
+            body{
+                font-family: Arial Black;
+                font-size: 16px;
+                text-align: center;
+            }
+            font{
+                color: rgb(11, 150, 230);
+            }
+            .container{
+                padding: 100px;
+            }
+            .input{
+                width: 90px;
+                height: 40px;
+                color: white;
+                font-size: 20px;
+                background-color: rgb(39, 160, 39);
+                float: left;
+            }
+            input{
+                width: 350px;
+                height: 40px;
+                margin: 20px;
+            }
+            label{
+                width: 90px;
+                height: 40px;
+                color: white;
+                font-size: 20px;
+                background-color: rgb(11, 150, 230);
+                float: left;
+            }
+            p{
+                border: 1px solid black;
+                width: 200px;
+                height: 40px;
+                margin: 20px;
+            }
+        </style>
+        <script>
+            function searchForString () {
+            var str = document.getElementById("string").value;
+var input = document.getElementById("input").value;
+document.getElementById("output").innerHTML = getAllIndexes (str, input)
+            }
+            function getAllIndexes(arr, val) {
+    var indexes = [], i;
+    for(i = 0; i < arr.length; i++)
+        if (arr[i] === val)
+            indexes.push(i);
+    return indexes;
+}
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h3> <font>Character</font> Game </h3>
+            </div>
+            <br>
+        <br>
+        <br>
+        <div class="container">
+            <div>
+            <button class="input" value="submit" onclick="searchForString()"> Input</button>
+            </div>
+            <div style="float: left;">
+                String<br>
+                <input type="text" name="text" id="string">
+            </div>
+            <div style="float: left;">
+                Letter<br>
+                <input type="text" name="text" id="input">
+                </div>
+            <div>
+                <label> Output</label>
+                </div>
+                <div style="float: left;">
+                Array<br>
+                <p id="output" ></p>
+                </div>
+                </div>
+    </body>
+</html>

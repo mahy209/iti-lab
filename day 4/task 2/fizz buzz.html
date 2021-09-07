@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <title> Who Am I Game</title>
+        <style>
+            body{
+                font-family: Arial Black;
+                font-size: 16px;
+                text-align: center;
+            }
+            font{
+                color: rgb(11, 150, 230);
+            }
+            .container{
+                padding: 100px;
+            }
+            .input{
+                width: 90px;
+                height: 40px;
+                color: white;
+                font-size: 20px;
+                background-color: rgb(39, 160, 39);
+                float: left;
+            }
+            input{
+                width: 120px;
+                height: 40px;
+                margin: 20px;
+            }
+            label{
+                width: 90px;
+                height: 40px;
+                color: white;
+                font-size: 20px;
+                background-color: rgb(11, 150, 230);
+                float: right;
+            }
+            p{
+                border: 1px solid black;
+                width: 120px;
+                height: 40px;
+                margin: 20px;
+            }
+        </style>
+        <script>
+            function myFunction() {
+    var x = Number.MAX_SAFE_INTEGER + 1, text;
+  
+    x = document.getElementById("num").value;
+
+    if (isNaN(x) || x < 1) {
+      text = "Invalid";
+      } else if 
+      (x % 15 == 0) {
+      text = "FizzBuzz";
+        } else if 
+      (x % 5 == 0) {
+      text = "Buzz";
+        } else if 
+          (x % 3 == 0) {
+      text = "Fizz";
+    } else {
+      text = "Try Again";
+    }
+    document.getElementById("demo").innerHTML = text;
+  }
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h3> <font>Fizz Buzz</font> Game </h3>
+        </div>
+        <div>
+            write a function take a number and check if the given number is divided by 3 only, 5 only or both and print the suitable sentence. follolw the bellow rule.
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="container">
+            <div>
+            <button onclick="myFunction()" class="input" value="submit"> Input</button>
+            </div>
+            <div style="float: left;">
+            Number<br>
+            <input type="number" name="number" id="num">
+            </div>
+            <div>
+                <label> Output</label>
+                </div>
+                <div style="float: right;">
+                sentence<br>
+                <p id="demo"></p>
+                </div>
+        </div>
+    </body>
+</html>

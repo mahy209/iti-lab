@@ -1,0 +1,80 @@
+<html>
+    <head>
+        <title> Bottle Game</title>
+        <style>
+            body{
+                font-family: Arial Black;
+                font-size: 16px;
+                text-align: center;
+            }
+            font{
+                color: rgb(11, 150, 230);
+            }
+            .container{
+                padding: 100px;
+            }
+            .input{
+                width: 90px;
+                height: 40px;
+                color: white;
+                font-size: 20px;
+                background-color: rgb(39, 160, 39);
+                float: left;
+            }
+            input{
+                width: 350px;
+                height: 40px;
+                margin: 20px;
+            }
+            label{
+                width: 90px;
+                height: 40px;
+                color: white;
+                font-size: 20px;
+                background-color: rgb(11, 150, 230);
+                float: left;
+            }
+            p{
+                border: 1px solid black;
+                width: 200px;
+                height: 40px;
+                margin: 20px;
+            }
+        </style>
+        <script>
+            var items = [];
+
+function arraylist1() {
+  boxvalue = document.getElementById('box').value;
+  items.push(boxvalue);  
+  console.log(items);
+  return false;
+}
+        </script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="header">
+                <h3> <font>Bottle</font> Game </h3>
+            </div>
+            <br>
+        <br>
+        <br>
+        <div class="container">
+            <div>
+            <button class="input" value="submit" onclick=" return arraylist1()"> Input</button>
+            </div>
+            <div style="float: left;">
+            Array<br>
+            <input type="text" name="text" id="box">
+            </div>
+            <div>
+                <label> Output</label>
+                </div>
+                <div style="float: left;">
+                Array<br>
+                <p></p>
+                </div>
+                </div>
+    </body>
+</html>
