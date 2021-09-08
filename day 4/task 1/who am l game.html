@@ -1,69 +1,106 @@
 <html>
     <head>
-        <title> Who Am I Game</title>
+        <title> animals</title>
         <style>
-            body{
-                font-family: Arial Black;
-                font-size: 16px;
-                text-align: center;
-            }
-            font{
-                color: rgb(11, 150, 230);
-            }
-            .que{
-                background-color: rgb(11, 150, 230);
-                width: 40%;
-                height: 30px;
-                color: white;
-                position: center;
-            }
-            button{
-                margin: 40px;
-            }
-            .yes{
-                color: rgb(11, 150, 230);
-                background-color: white;
-                border: 1px solid rgb(11, 150, 230);
-                width: 60px;
-                height: 30px;
-                border-radius: 5px;
-            }
-            .no{
-                color: red;
-                background-color: white;
-                border: 1px solid red;
-                width: 60px;
-                height: 30px;
-                border-radius: 5px;
+            img{
+                width: 50px;
+                height: 50px;
             }
         </style>
     </head>
-    <body>
-        <div class="header">
-            <h3> <font>Who Am I</font> Game </h3>
-        </div>
-        <div class="row">
-            <div>
-          <p class="que">Do you fly?</p>
-          <div>
-              <label>
-              <button class="yes"> Yes </button>
-            </label>
-              <div>
-                <p class="que">Are you wild?</p>
-                <div>
-                <label>
-                    <button class="yes"> Yes </button>
-                </label>
-            </label>
-                    <button class="no"> No </button>
-                </label>
-              </div>
-            <label>
-              <button class="no"> No </button>
-            </label>
-          </div>
-        </div>
+    <body align="center">
 
+            <p align="center" style ="color:#00acee; font-family:sans-serif;">Who am I</pr><pr style="font-family:sans-serif; color: black;"> Game</p>
+
+            <div style="width: 300px; margin: 0 auto; height: 100px">
+                <div style="background-color:#00acee; height: 35px;">
+                    <p align="center" style="color:white; font-family: sans-serif; ">Do you fly?</p>
+                </div>
+                <div style="margin-top: 40px;">
+                    <div onclick="handleAnswer('animal-fly')" style="padding: 6px; border:green solid 1px; color:green;  float: left; cursor: pointer;">Yes</div>
+                    <div onclick="handleAnswer('animal-land')" style="padding: 6px; border:red solid 1px; color:red; float: right; cursor: pointer;">No</div>
+                </div>
+            </div>
+
+            <div style="width: 100%; height: 100px;">
+                <div id="fly" style="visibility: hidden; width: 200px; margin-left: 448px;  float: left;">
+                    <div style="background-color:#00acee; height: 35px;">
+                        <p align="center" style="color:white; font-family: sans-serif; ">Are You Wild?</p>
+                    </div>
+                    <div style="margin-top: 40px;">
+                        <pr onclick="handleAnswer('fly-wild')" style="padding: 6px; border:green solid 1px; color:green;  float: left; cursor: pointer;">Yes</pr>
+                        <pr onclick="handleAnswer('fly-peaceful')" style="padding: 6px; border:red solid 1px; color:red; float: right; cursor: pointer;">No</pr>
+                    </div>
+                </div>
+
+                <div id="land" style="visibility: hidden; width: 300px; margin-right: 345px;  float: right;">
+                    <div style="background-color:#00acee; height: 35px;">
+                        <p align="center" style="color:white; font-family: sans-serif; ">Do you live under sea?</p>
+                    </div>
+                    <div style="margin-top: 40px;">
+                        <pr onclick="handleAnswer('land-sea')" style="padding: 6px; border:green solid 1px; color:green;  float: left; cursor: pointer;">Yes</pr>
+                        <pr onclick="handleAnswer('land-ground')" style="padding: 6px; border:red solid 1px; color:red; float: right; cursor: pointer;">No</pr>
+                    </div>
+                </div>
+            </div>
+
+            <div style="width: 100%; height: 100px;">
+                <div style="width: 200px; margin-left: 450px;float: left; padding-top: 20px">
+                    <div id="eagle" style="visibility: hidden; float: left;margin-left: -25px">
+                        <img src="eagle.png"/>
+                        <p>Eagle</p>
+                    </div>
+                    <div id="parrot" style="visibility: hidden; float: right;margin-right: -18px">
+                        <img src="parrot.png"/>
+                        <p>Parrot</p>
+                    </div>
+                </div>
+
+                <div style="width: 100%; height: 100px;">
+                    <div id="sea" style="visibility: hidden; width: 200px; margin-left: 145px;  float: left;">
+                        <div style="background-color:#00acee; height: 35px;">
+                            <p align="center" style="color:white; font-family: sans-serif; ">Do You Wild?</p>
+                        </div>
+                        <div style="margin-top: 40px;">
+                            <pr onclick="handleAnswer('sea-wild')" style="padding: 6px; border:green solid 1px; color:green;  float: left; cursor: pointer;">Yes</pr>
+                            <pr onclick="handleAnswer('sea-peaceful')" style="padding: 6px; border:red solid 1px; color:red; float: right; cursor: pointer;">No</pr>
+                        </div>
+                    </div>
+<div id="ground" style="visibility: hidden; width: 200px; margin-right: 255px;  float: right;">
+                        <div style="background-color:#00acee; height: 35px;">
+                            <p align="center" style="color:white; font-family: sans-serif; ">Do You Wild?</p>
+                        </div>
+                        <div style="margin-top: 40px;">
+                            <pr onclick="handleAnswer('ground-wild')" style="padding: 6px; border:green solid 1px; color:green;  float: left; cursor: pointer;">Yes</pr>
+                            <pr onclick="handleAnswer('ground-peaceful')" style="padding: 6px; border:red solid 1px; color:red; float: right; cursor: pointer;">No</pr>
+                        </div>
+                    </div>
+                </div>
+                
+                <div style="width: 100%; height: 100px;">
+                    <div style="width: 500px; margin-right: 245px;float: right; padding-top: 20px;">
+                        <div id="shark" style="visibility: hidden; visibility: hidden; float: left; position: relative; display: flex; flex-direction: column; justify-content: space-between; height: 120px;">
+                            <img src="shark.png"/>
+                            <p>Shark</p>
+                        </div>
+                        <div id="dolphin" style="visibility: hidden; float: left;margin-left: 95px; display: flex; flex-direction: column; justify-content: space-between; height: 120px">
+                            <img src="dolphin.png"/>
+                            <p>Dolphin</p>
+                        </div>
+                        <div id="lion" style="visibility: hidden; float: left;margin-left: 50px; display: flex; flex-direction: column; justify-content: space-between; height: 120px">
+                            <img src="lion.png"/>
+                            <p>Lion</p>
+                        </div>
+                        <div id="cat" style="visibility: hidden; float: left;margin-left: 110px; display: flex; flex-direction: column; justify-content: space-between; height: 120px">
+                            <img src="cat.png"/>
+                            <p>Cat</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+            <script src="scriptgame.js"></script>
     </body>
 </html>

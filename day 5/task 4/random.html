@@ -57,7 +57,7 @@ function displayRandomImages()
         newArray[i] = new Image();  
         newArray[i].src = imageArray[i].src;  
         newArray[i].width = imageArray[i].width; 
-        newArray[i].style.borderColor = colorArray[Math.floor(Math.random() * colorArray.length)]
+        newArray[i].style.border =  "6px solid " + colorArray[Math.floor(Math.random() * colorArray.length)]
         newArray[i].height = imageArray[i].height;  
     }  
       
