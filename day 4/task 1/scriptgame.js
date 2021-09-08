@@ -34,6 +34,6 @@ const handleAnswer = (result) => {
     }
 }
 
-const changeElementVisibility = (element) => {
+ function changeElementVisibility(element) {
     document.getElementById(element).style.visibility = "visible";
 }

@@ -1,0 +1,92 @@
+<html>
+    <head>
+<title>slide show</title>
+<style>
+    #slideshow {
+  margin: 50px auto;
+  position: relative;
+  width: 900px;
+  height: 450px;
+  padding: 10px;
+}
+#slideshow > div {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  right: 10px;
+  bottom: 10px;
+}
+#slideshow > div > img {
+  width: 100%;
+}
+#button {
+  text-align: center;
+}
+#play , #pause{
+    color: white;
+    width: 80px;
+    height: 60px;
+    background-color: teal;
+    margin: 20px;
+}
+</style>
+</head>
+<body>
+    <div id="slideshow">
+        <div>
+          <img name="slide" id="imgSlideshow" src="cat1.png">
+        </div>
+      </div>
+      <div id="button">
+        <button id="prevBtn" onclick="return previousImage()"><img src="icons8-previous-64.png"></button>
+        <button id="play" onclick="return setTimer()">Play</button>
+        <button id="pause" onclick="return setTimer()">Pause</button>
+        <button id="nextBtn" onclick="return nextImage()"><img src="icons8-next-64.png"></button>
+      </div>
+
+<script>
+    var imgNumber = 0;
+var path = ["cat1.png", "cat2.jpg", "cat3.jpg", "cat4.jpg", "cats.jpg"];
+var numberOfImg = path.length;
+var timer = null;
+
+function slide() {
+  imgNumber = (imgNumber + 1) % path.length;
+  console.log(imgNumber);
+  document.getElementById("imgSlideshow").src = path[imgNumber];
+  changeCounter(imgNumber + 1, numberOfImg);
+}
+
+function setTimer() {
+  if (timer) {
+    clearInterval(timer);
+    timer = null;
+  } else {
+    timer = setInterval(slide, 3000);
+  }
+  return false;
+}
+
+function previousImage() {
+  --imgNumber;
+  if (imgNumber < 0) {
+    imgNumber = numberOfImg - 1;
+  }
+  document.getElementById("imgSlideshow").src = path[imgNumber];
+  changeCounter(imgNumber + 1, numberOfImg);
+  return false;
+}
+
+function nextImage() {
+  ++imgNumber;
+  if (imgNumber > (numberOfImg - 1)) {
+    imgNumber = 0;
+  }
+  document.getElementById("imgSlideshow").src = path[imgNumber];
+  changeCounter(imgNumber + 1, numberOfImg);
+  return false;
+}
+</script>
+
+</body>
+</html>
