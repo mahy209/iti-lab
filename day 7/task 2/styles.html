@@ -1,0 +1,121 @@
+<html>
+    <head>
+        <title> Styles </title>
+        <style>
+            form{
+                border: 1px solid black;
+                padding: 10px;
+                height: 200px;
+                float: left;
+            }
+            pre{
+                padding: 15px;
+                margin: 20px;
+                font-family: Arial, Helvetica, sans-serif;
+                font-size: 12px;
+                text-align: left;
+                text-transform:none;
+                text-decoration:none;
+                border-style: none;
+            }
+        </style>
+        <script src="stylescript.js"></script>
+    </head>
+    <body>
+        <div>
+            <pre id="demo">
+                Web engineer skilled in designing, developing responsive user 
+                interfaces and testing web-based applications. I have hands-on 
+                skills in wide range of software, tools and programming languages.
+            </pre>
+        </div>
+        <div>
+                <form>
+                    <h4>Font family</h4>
+                    <input type="radio" name="font-family" value="Arial" onclick="fontArial()" checked> Arial <br>
+                    <input type="radio" name="font-family" value="georgia" onclick="fontGeorgia()"> georgia<br>
+                    <input type="radio" name="font-family" value="times" onclick="fontArialBlack()"> Arial Black<br>
+                    <input type="radio" name="font-family" value="Veranda" onclick="fontVerdana()"> Verdana <br>
+                    <input type="radio" name="font-family" value="impact" onclick="fontImpact()"> impact
+                  </form>
+            </div>
+            <div>
+                <form>
+                    <h4>Font Size</h4>
+                    <input type="radio" name="font-size" value="12px" checked onclick="font1()"> 12px <br>
+                    <input type="radio" name="font-size" value="14px" onclick="font2()"> 14px <br>
+                    <input type="radio" name="font-size" value="16px" onclick="font3()"> 16px <br>
+                    <input type="radio" name="font-size" value="18px" onclick="font4()"> 18px <br>
+                    <input type="radio" name="font-size" value="20px" onclick="font5()"> 20px
+                  </form>
+            </div>
+            <div>
+                <form>
+                    <h4>Text Align</h4>
+                    <input type="radio" name="Align" value="lefy" checked onclick="align1()"> left<br>
+                    <input type="radio" name="Align" value="right" onclick="align2()"> right<br>
+                    <input type="radio" name="Align" value="center" onclick="align3()"> center<br>
+                    <input type="radio" name="Align" value="Justify" onclick="align4()"> Justify
+                  </form>
+            </div>
+            <div style="float: left;">
+                <form>
+                    <h4>Line height</h4>
+                    <input type="radio" name="line-height" value="normal" checked onclick="height1()"> normal <br>
+                    <input type="radio" name="line-height" value="10px" onclick="height2()"> 10px <br>
+                    <input type="radio" name="line height" value="15px" onclick="height3()"> 15px <br>
+                    <input type="radio" name="line height" value="1.5em" onclick="height4()"> 1.5em 
+                  </form>
+            </div>
+            <div>
+                <form>
+                    <h4> Letter Spacing </h4>
+                    <input type="radio" name="letter-spacing" value="normal" checked onclick="spacing1()"> normal <br>
+                    <input type="radio" name="letter-spacing" value="-1px" onclick="spacing2()"> -1px <br>
+                    <input type="radio" name="letter-spacing" value="2px" onclick="spacing3()"> 2px <br>
+                    <input type="radio" name="letter-spacing" value="3px" onclick="spacing4()"> 3px
+                  </form>
+            </div>
+            <div>
+                <form>
+                    <h4> Text Transform </h4>
+                    <input type="radio" name="text-transform" value="none" checked onclick="tranform1()"> none <br>
+                    <input type="radio" name="text-transform" value="capitalize" onclick="tranform2()"> capitalize <br>
+                    <input type="radio" name="text-transform" value="uppercase" onclick="tranform3()"> uppercase <br>
+                    <input type="radio" name="text-transform" value="lowercase" onclick="tranform4()"> lowercase
+                  </form>
+            </div>
+            <div>
+                <form>
+                    <h4> Text Decoration </h4>
+                    <input type="radio" name="text-decoration" value="none" checked onclick="decor1()"> none <br>
+                    <input type="radio" name="text-decoration" value="line-through" onclick="decor2()"> line through <br>
+                    <input type="radio" name="text-decoration" value="overline" onclick="decor3()"> overline <br>
+                    <input type="radio" name="text-decoration" value="underline" onclick="decor4()"> underline
+                  </form>
+            </div>
+            <div>
+                <form>
+                    <h4> Text Border</h4>
+                    <input type="radio" name="text-border" value="none" checked onclick="border1()"> none <br>
+                    <input type="radio" name="text-border" value="dotted" onclick="border2()"> dotted <br>
+                    <input type="radio" name="text-border" value="double" onclick="border3()"> double <br>
+                    <input type="radio" name="text-border" value="groove" onclick="border4()"> groove <br>
+                    <input type="radio" name="text-border" value="dashed" onclick="border5()"> dashed <br>
+                    <input type="radio" name="text-border" value="solid" onclick="border6()"> solid
+                  </form>
+            </div>
+            <div>
+                <form>
+                    <h4> Border Color</h4>
+                    <input type="radio" name="bordercolor" value="none" checked onclick="bordercolor1()"> none <br>
+                    <input type="radio" name="bordercolor" value="pink" onclick="bordercolor2()"> pink <br>
+                    <input type="radio" name="bordercolor" value="red" onclick="bordercolor3()"> red <br>
+                    <input type="radio" name="bordercolor" value="green" onclick="bordercolor4()"> green <br>
+                    <input type="radio" name="bordercolor" value="blue" onclick="bordercolor5()"> blue <br>
+                    <input type="radio" name="bordercolor" value="purple" onclick="bordercolor6()"> purple
+                  </form>
+            </div>
+        </div>
+    </body>
+</html>
