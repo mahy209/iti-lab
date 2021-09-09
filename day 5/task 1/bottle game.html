@@ -41,16 +41,6 @@
                 margin: 20px;
             }
         </style>
-        <script>
-            var items = [];
-
-function arraylist1() {
-  boxvalue = document.getElementById('box').value;
-  items.push(boxvalue);  
-  console.log(items);
-  return false;
-}
-        </script>
     </head>
     <body>
         <div class="container">
@@ -62,19 +52,33 @@ function arraylist1() {
         <br>
         <div class="container">
             <div>
-            <button class="input" value="submit" onclick=" return arraylist1()"> Input</button>
+            <button class="input" value="submit" onclick="twoArray()"> Input</button>
             </div>
             <div style="float: left;">
             Array<br>
-            <input type="text" name="text" id="box">
+            <input type="text" name="text" id="inputname">
             </div>
             <div>
                 <label> Output</label>
                 </div>
                 <div style="float: left;">
                 Array<br>
-                <p></p>
+                <input type="text" id="outputname"></input>
                 </div>
                 </div>
+                <script>
+
+                    function twoArray() {
+                   var numbers=new Array();
+                   var inputValue = document.getElementById("inputname").value;
+                   var obj = JSON.parse(inputValue);
+                     var randomItem1 = obj[Math.floor(Math.random() * obj.length)];
+                     var randomItem2 = obj[Math.floor(Math.random() * obj.length)];
+                     var lists=[];
+                     lists.push(randomItem1);
+                     lists.push(randomItem2);
+                 document.getElementById("outputname").value = lists;
+               }
+               </script>
     </body>
 </html>
