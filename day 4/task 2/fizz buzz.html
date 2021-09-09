@@ -43,11 +43,9 @@
         </style>
         <script>
             function myFunction() {
-    var x = Number.MAX_SAFE_INTEGER + 1, text;
-  
-    x = document.getElementById("num").value;
+     var x = document.getElementById("num").value;
 
-    if (isNaN(x) || x < 1) {
+    if (x < 1) {
       text = "Invalid";
       } else if 
       (x % 15 == 0) {

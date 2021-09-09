@@ -39,8 +39,8 @@
       </div>
       <div id="button">
         <button id="prevBtn" onclick="return previousImage()"><img src="icons8-previous-64.png"></button>
-        <button id="play" onclick="return setTimer()">Play</button>
-        <button id="pause" onclick="return setTimer()">Pause</button>
+        <button id="play" onclick="return playImage()">Play</button>
+        <button id="pause" onclick="return pauseImage()">Pause</button>
         <button id="nextBtn" onclick="return nextImage()"><img src="icons8-next-64.png"></button>
       </div>
 
@@ -57,15 +57,13 @@ function slide() {
   changeCounter(imgNumber + 1, numberOfImg);
 }
 
-function setTimer() {
-  if (timer) {
-    clearInterval(timer);
-    timer = null;
-  } else {
-    timer = setInterval(slide, 3000);
-  }
-  return false;
-}
+var handeler;
+        function playImage() {
+            handeler= setInterval('slide()', 2000);
+        }
+        function pauseImage() {
+            clearInterval(handeler);
+        }
 
 function previousImage() {
   --imgNumber;
