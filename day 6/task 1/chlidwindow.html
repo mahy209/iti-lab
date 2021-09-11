@@ -1,0 +1,32 @@
+<html>
+    <head>
+        <title> child window </title>
+    </head>
+    <style>
+        input{
+            width: 100px;
+            height: 50px;
+            padding: 20px;
+            margin: 50px;
+            font-size: 20px;
+            font-family: 'Courier New', Courier, monospace;
+            color: white;
+            background-color: teal;
+        }
+        img{
+            width: 300px;
+            height: 150px;
+        }
+    </style>
+    <body>
+        <h2> Welcome </h2> <p id="name"></p>
+        <img src="cat.jpg"/> <br>
+        <input type="button" value="close" onclick="childClose();"/>
+        <script>
+            document.getElementById("name").innerHTML = opener.my_parents_special_setting;
+            function childClose(){
+                close();
+            }
+        </script>
+    </body>
+</html>

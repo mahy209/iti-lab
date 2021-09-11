@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>  parent window </title>
+    </head>
+    <style>
+        .btn{
+            width: 100px;
+            height: 50px;
+            padding: 20px;
+            margin: 50px;
+            font-size: 20px;
+            font-family: 'Courier New', Courier, monospace;
+            color: white;
+            background-color: teal;
+        }
+        input{
+            width: 150px;
+            height: 50px;
+            padding: 20px;
+            margin: 50px;
+            font-size: 16px;
+        }
+    </style>
+<body>
+        <input class="btn" type="submit" value="Enter" onclick="myFunction();"/>
+
+<script>
+    document.getElementById("name").value;
+function myFunction() {
+  var windo = prompt("Enter your name" , name);
+  var newWindow = window.open("chlidwindow.html" , "" , "width=400,height=400");
+  windo.my_childs_special_setting = name;
+  windo.focus();
+}
+</script>
+
+</body>
+</html>
