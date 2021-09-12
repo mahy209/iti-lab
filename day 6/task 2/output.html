@@ -1,0 +1,51 @@
+<html>
+<head>
+<title> form </title>
+</head>
+<body>
+
+    <div id="container" style="margin: 10px 0">
+    </div>
+
+    <script>
+        if(document.cookie){
+            var counter = parseInt(document.cookie.split("=")[1]) + 1;
+            document.cookie = "counter=" + counter;
+        }else{
+            document.cookie = "counter=1";
+        }
+        var result = window.location.search.split("&");
+        const name = result[0].split("=")[1];
+        const age = result[1].split("=")[1];
+        const gender = result[2].split("=")[1];
+        const color = result[3].split("=")[1];
+        const div = document.createElement("div");
+        const img = document.createElement("img");
+        const p = document.createElement("p");
+        const p2 = document.createElement("p");
+        
+        if(gender === "male"){
+            img.src = "man.jpg";
+        }else{
+            img.src = "women.jpg";
+        }
+        
+        p2.innerHTML = name;
+        p2.style.color = color;
+        p2.style.display = "inline-block";
+        p.innerHTML = "Welcome ";
+        p.style.display = "inline-block";
+        p.style.display = "bold";
+        p.append(p2);
+        p.innerHTML +=  " you have visited this site " + document.cookie.split("=")[1] + " times";
+        div.append(img);
+        div.append(p);
+        document.getElementById("container").append(div);
+        p2.innerHTML = name;
+        p2.style.color = color;
+        p.innerHTML = "Welcome ";
+        p.append(p2);
+        p.innerHTML +=  " you have visited this site " + document.cookie.split("=")[1] + " times";
+    </script>
+</body>
+</html>

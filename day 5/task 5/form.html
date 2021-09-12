@@ -2,6 +2,17 @@
   <head>
     <title> Form </title>
   </head>
+  <style>
+    body{
+      font-size: 16px;
+      font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    }
+    input{
+      width: 200px;
+      height: 30px;
+      border: 2px solid teal;
+    }
+  </style>
   <body>
     <div>
       <div>
@@ -23,74 +34,52 @@
       function nameInput()
       {
         var input = document.getElementById("name").value;
-
         var numberFound = false;
-
-        for (var i = 0; i < input.length; i++)
-        {
-          if (input[i] >= 0 && input[i] < 10)
-          {
+        for (var i = 0; i < input.length; i++){
+          if (input[i] >= 0 && input[i] < 10){
             numberFound = true;
             break;
           }
         }
 
-        if (numberFound === true)
-        {
+        if (numberFound === true){
           document.getElementById("name-error").innerHTML = "Found Number";
         }
-        else if (numberFound === false)
-        {
+        else if (numberFound === false){
           document.getElementById("name-error").innerHTML = "";
         }
       }
 
-
-      function phoneInput()
-      {
+      function phoneInput(){
         var input = document.getElementById("phone").value;
-
         var threeNumbers = input.split("-")[0];
-
-        if (input.length === 11 && input.includes("-") && input.indexOf("-") ===
-          3 && (threeNumbers === "010" || threeNumbers === "011" ||
-            threeNumbers === "012" || threeNumbers === "015"))
+        if (input.length === 11 && input.includes("-") && input.indexOf("-") === 3 && (threeNumbers === "010" || threeNumbers === "011" || threeNumbers === "012" || threeNumbers === "015"))
         {
           document.getElementById("phone-error").innerHTML = "";
         }
-        else
-        {
+        else{
           document.getElementById("phone-error").innerHTML =
             "phone format invalid";
         }
       }
 
-
-      function fullNameInput()
-      {
+      function fullNameInput(){
         var input = document.getElementById("full-name").value;
         var name = input.split(" ");
-
-        for (var i = 0; i < name.length; i++)
-        {
-          if (name[i] === "")
-          {
+        for (var i = 0; i < name.length; i++){
+          if (name[i] === ""){
             name.splice(i, 1);
             i--;
           }
         }
 
         var counter = 0;
-
-        for (var i = 0; i < input.length; i++)
-        {
-          if (input[i] === " ")
-          {
+        for (var i = 0; i < input.length; i++){
+          if (input[i] === " "){
             continue;
           }
           counter++;
         }
-
         document.getElementById("output").innerHTML = "word: " + name.length +
           " letter: " + counter;
 
