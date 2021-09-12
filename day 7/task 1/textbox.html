@@ -1,0 +1,78 @@
+<html>
+<head>
+    <title> Table </title>
+    <style>
+        body{
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+        input[type=button]{
+            width: 150px;
+            height: 40px;
+            font-size: 16px;
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            color: teal;
+            background-color: white;
+            border: 2px solid teal;
+            padding: 10px;
+            margin: 30px;
+            text-align: center;
+        }
+        input[type=text]{
+            width: 300px;
+            height: 40px;
+            font-size: 16px;
+            font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+            background-color: white;
+            border: 2px solid teal;
+            padding: 10px;
+            margin: 20px;
+            text-align: center;
+        }
+        table, tr, th{
+            padding: 20px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <input type="text" id="textbar">
+        <input type="button" id="buttonAdd" value="Enter"/>
+        <table id="tableItem">
+            <tr>
+                <th>No.</th>
+                <th>News</th>
+            </tr>
+        </table>
+        <input type="button" id="countRows" value="Count Rows"/>
+        <div id="rowsNum">
+        </div>
+    </div>
+    <script>
+        document.getElementById("buttonAdd").addEventListener("click", addItem);
+        document.getElementById("countRows").addEventListener("click", countRow);
+        
+        function addItem(){
+            var textbar = document.getElementById("textbar");
+
+            if(textbar.value.length !== 0){
+                var tableItem = document.getElementById("tableItem");
+                var tr = document.createElement("tr");
+                var td1 = document.createElement("td");
+                var td2 = document.createElement("td");
+                td1.innerHTML= tableItem.children.length;
+                td2.innerHTML = textbar.value;
+
+                tr.append(td1);
+                tr.append(td2);
+                tableItem.append(tr);
+                textbar.value = "";
+            }
+        }
+        function countRow(){
+            var tableItem = document.getElementById("tableItem");
+            document.getElementById("rowsNum").innerHTML = tableItem.children.length - 1 + " rows";
+        }
+        </script>
+</body>
+</html>

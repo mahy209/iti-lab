@@ -1,0 +1,102 @@
+<html>
+  <head>
+    <title> Form </title>
+  </head>
+  <body>
+    <div>
+      <div>
+        <label for="name" style="display: block">Username</label>
+        <input oninput="nameInput()" id="name" type="text">
+        <p id="name-error"></p>
+        <label for="phone" style="display: block">Phone Number</label>
+        <input onchange="phoneInput()" id="phone" type="text">
+        <p id="phone-error"></p>
+      </div>
+      <div>
+        <label for="full-name" style="display: block">Full Name</label>
+        <input onchange="fullNameInput()" id="full-name" type="text">
+        <div id="output">
+        </div>
+      </div>
+    </div>
+    <script>
+      function nameInput()
+      {
+        var input = document.getElementById("name").value;
+
+        var numberFound = false;
+
+        for (var i = 0; i < input.length; i++)
+        {
+          if (input[i] >= 0 && input[i] < 10)
+          {
+            numberFound = true;
+            break;
+          }
+        }
+
+        if (numberFound === true)
+        {
+          document.getElementById("name-error").innerHTML = "Found Number";
+        }
+        else if (numberFound === false)
+        {
+          document.getElementById("name-error").innerHTML = "";
+        }
+      }
+
+
+      function phoneInput()
+      {
+        var input = document.getElementById("phone").value;
+
+        var threeNumbers = input.split("-")[0];
+
+        if (input.length === 11 && input.includes("-") && input.indexOf("-") ===
+          3 && (threeNumbers === "010" || threeNumbers === "011" ||
+            threeNumbers === "012" || threeNumbers === "015"))
+        {
+          document.getElementById("phone-error").innerHTML = "";
+        }
+        else
+        {
+          document.getElementById("phone-error").innerHTML =
+            "phone format invalid";
+        }
+      }
+
+
+      function fullNameInput()
+      {
+        var input = document.getElementById("full-name").value;
+        var name = input.split(" ");
+
+        for (var i = 0; i < name.length; i++)
+        {
+          if (name[i] === "")
+          {
+            name.splice(i, 1);
+            i--;
+          }
+        }
+
+        var counter = 0;
+
+        for (var i = 0; i < input.length; i++)
+        {
+          if (input[i] === " ")
+          {
+            continue;
+          }
+          counter++;
+        }
+
+        document.getElementById("output").innerHTML = "word: " + name.length +
+          " letter: " + counter;
+
+      }
+    </script>
+
+  </body>
+
+</html>

@@ -1,0 +1,98 @@
+<html>
+<head>
+    <title> Two Lists </title>
+    <style>
+        body{
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            font-size: 16px;
+        }
+        img{
+            width: 50px;
+            height: 50px;
+        }
+        img:hover{
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+        }
+        #container{
+            height: 600px;
+            width: 1000px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: row;
+            position: relative;
+        }
+        #left-container, #right-container{
+            width: 250px;
+            display: inline-block;
+            height: 250px; 
+            border: 5px solid rgb(114, 42, 81); 
+            margin-right: 20px;
+        }
+        input[type=radio]{
+            visibility: hidden;
+        }
+        label{
+            padding: 20px;
+            margin-top: 20px;
+    }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <div style="display: flex;">
+        <div id="left-container">
+            <div style="display: block;">
+                <input type="radio" id="c#" name="left-items" value="c#">
+                <label for="c#"> C# </label>
+            </div>
+            <div style="display: block;">
+                <input type="radio" id="javascript" name="left-courses" value="javascript">
+                <label for="javascript"> javascript </label>
+            </div>
+            <div style="display: block;">
+                <input type="radio" id="python" name="left-courses" value="python">
+                <label for="python"> Python </label>
+            </div>
+        </div>
+    
+        <div id="right-container">
+            <div style="display: block;">
+                <input type="radio" id="flutter" name="right-courses" value="flutter">
+                <label for="flutter"> Flutter </label>
+            </div>
+            <div style="display: block;">
+                <input type="radio" id="react" name="right-courses" value="react">
+                <label for="react"> React </label>
+            </div>
+            <div style="display: block;">
+                <input type="radio" id="android" name="right-courses" value="android">
+                <label for="android"> Andorid </label>
+            </div>
+        </div>
+        <div style="position: absolute; bottom: 280px; left: 220px;">
+            <div style="float: left;">
+                <img id="left" src="icons8-previous-64.png"/>
+            </div>
+            <div style="float: left;">
+                <img id="right" src="icons8-next-64.png"/>
+            </div>
+        </div>
+    </div>
+    </div>
+    <script>
+        document.getElementById("right").addEventListener("click", goRight)
+        document.getElementById("left").addEventListener("click", goLeft)
+        
+        function goRight () {
+            var element = document.querySelector('input:checked');
+            var parentElement = element.parentElement;
+            document.getElementById("right-container").append(parentElement);
+        }
+        function goLeft () {
+            var element = document.querySelector('input:checked');
+            var parentElement = element.parentElement;
+            document.getElementById("left-container").append(parentElement);
+        }
+    </script>
+</body>
+</html>
