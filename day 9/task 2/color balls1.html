@@ -1,0 +1,45 @@
+<html>
+    <head>
+        <title> color balls </title>
+        <style>
+            .circle{
+                height: 100px;
+                width: 100px;
+                border-radius: 50%;
+                margin: 10px;
+                display: inline-block;
+            }
+            span[name="redCircle"]{
+                background-color: red;
+            }
+            span[name="yellowCircle"]{
+                background-color: yellow;
+            }
+            span[name="blueCircle"]{
+                background-color: blue;
+            }
+        </style>
+        <script src="jq.js"></script>
+        <script>
+            $(document).ready(function(){
+                $('[name="redCircle"]').click(function(){
+                    $(this).clone().appendTo("#newCircles");
+                });
+                $('[name="yellowCircle"]').click(function(){
+                    $(this).clone().appendTo("#newCircles");
+                });
+                $('[name="blueCircle"]').click(function(){
+                    $(this).clone().appendTo("#newCircles");
+                });
+            });
+        </script>
+    </head>
+<body>
+    <div style="border: 2px solid black;float: left;">
+        <span class="circle" name="redCircle"></span>
+        <span class="circle" name="yellowCircle"></span>
+        <span class="circle" name="blueCircle"></span>
+      </div>
+      <div id="newCircles" style="float: left;"></div>
+</body>
+</html>

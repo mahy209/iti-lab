@@ -1,0 +1,72 @@
+<html>
+    <head>
+        <title> To-do </title>
+        <script src="jq.js"></script>
+        <script src="script.js"></script>
+        <style>
+        .container {
+            margin:150px auto;
+            min-width: 500px;
+            width: 45%;
+            text-align: left;
+            color: #3b3b3b;
+            font-weight: bold;
+            }
+            form {
+                outline: 0;
+                height: 36px;
+                margin-top: 5%;
+                border: 3px solid #cc0000;
+            }
+            input[type="text"] {
+                outline: 0;
+                width: 55%;
+                height: 32px;
+                border: none;
+                font-size: 18px;
+                font-weight: normal;
+                padding-left: 10px;
+            }
+            .add {
+                outline: 0;
+                float: right;
+                width: 34%;
+                height: 36px;
+                color: #fff;
+                font-size: 18px;
+                border: none;
+                cursor: pointer;
+                background-color: #cc0000;
+            }
+            ul {
+                padding: 0;
+                text-align: left;
+                list-style: none;
+            }
+            hr {
+                border-bottom: 0;
+                margin: 15px 0;
+            }
+            input[type="checkbox"] {
+                width: 30px; 
+            }
+            .remove {
+                float: right;
+                cursor: pointer;
+            }
+            .completed { 
+                text-decoration: line-through; 
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <h1 style="color: #cc0000;"> To-do organizer</h1>
+            <ul id="list-items"></ul>
+            <form class="add-items">
+                <input type="text" class="form-control" id="todo-list-item" placeholder="add new!">
+                <button class="add" type="submit"> Add </button>
+            </form>
+        </div>
+    </body>
+</html>

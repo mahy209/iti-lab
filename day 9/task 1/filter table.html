@@ -1,0 +1,100 @@
+<html>
+<head>
+    <title> Filter table </title>
+<script src="jq.js"></script>
+<script>
+$(document).ready(function(){
+  $("#myInput").on("keyup", function() {
+    var value = $(this).val().toLowerCase();
+    var radioChecked = $("input[type='radio']:checked").val();
+    if (radioChecked === "first"){
+      $("td[name='firstName']").each(function(){
+        const cell = $(this).text().toLowerCase();
+        if (cell.includes(value)){
+          $(this).parent().show(500);
+        } else{
+          $(this).parent().hide(500);
+        }
+      })
+    } else if (radioChecked === "last"){
+      $("td[name='lastName']").each(function(){
+        const cell = $(this).text().toLowerCase();
+        if (cell.includes(value)){
+          $(this).parent().show(500);
+        } else{
+          $(this).parent().hide(500);
+        }
+      })
+    } else {
+      $("#myTable tr").filter(function() {
+      $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+    });
+    }
+    
+  });
+});
+</script>
+<style>
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+th{
+    background-color: #1aa3ff;
+}
+td, th {
+  border: 1px solid #e6f5ff;
+  text-align: left;
+  padding: 8px;
+}
+tr:nth-child(odd){
+    background-color: #b3e0ff;
+}
+tr:nth-child(even) {
+  background-color: #e6f5ff;
+}
+input[type=text]{
+    width: 250px;
+    height: 70px;
+    background-color: #1aa3ff;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+}
+</style>
+</head>
+<body>  
+<input id="myInput" type="text">
+<input type="radio" name="Filter" value="first"> first name<br>
+<input type="radio" name="Filter" value="last"> last name<br>
+<input type="radio" name="Filter" value="any" checked> any data
+<br><br>
+<table>
+  <thead>
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+  </tr>
+  </thead>
+  <tbody id="myTable">
+  <tr>
+    <td name="firstName">Mohamed</td>
+    <td name="lastName">X</td>
+  </tr>
+  <tr>
+    <td name="firstName">Khaled</td>
+    <td name="lastName">Y</td>
+  </tr>
+  <tr>
+    <td name="firstName">Ibrahim</td>
+    <td name="lastName">Z</td>
+  </tr>
+  <tr>
+    <td name="firstName">Abdallah</td>
+    <td name="lastName">ABC</td>
+  </tr>
+  </tbody>
+</table>
+</body>
+</html>

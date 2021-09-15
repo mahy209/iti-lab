@@ -34,7 +34,18 @@
         label{
             padding: 20px;
             margin-top: 20px;
-    }
+        }
+        input[type=button]{
+            width: 100px;
+            height: 40px;
+            background-color: rgb(114, 42, 81);
+            color: white;
+            font-size: 16px;
+        }
+        input[type=text]{
+            width: 400px;
+            height: 40px;
+        }
     </style>
 </head>
 <body>
@@ -77,6 +88,11 @@
                 <img id="right" src="icons8-next-64.png"/>
             </div>
         </div>
+        <div>
+            <label> Add cources: </label>
+            <input type="text" id="input"/>
+            <input type="button" value="Add" id="add-course"/>
+        </div>
     </div>
     </div>
     <script>
@@ -93,6 +109,15 @@
             var parentElement = element.parentElement;
             document.getElementById("left-container").append(parentElement);
         }
+        document.getElementById("add-course").addEventListener("click", () => {
+            var input = document.getElementById("input");
+            var div = `<div style="display: block;">
+                <input type="radio" id="${input.value}" name="left-courses" value="${input.value}">
+                <label for="${input.value}">${input.value}</label>
+                </div>`
+                document.getElementById("left-container").innerHTML += div;
+                input.value = ""
+            })
     </script>
 </body>
 </html>

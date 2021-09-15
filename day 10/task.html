@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title> Task 1</title>
+        <script>
+            let numbers = [80, 70, 50, 40, 30, 60, 20, 10, 90, 100 ];
+            numbers.sort();
+            numbers.sort(function(a, b){return b-a});
+            console.log(numbers);
+            const functionToFilterNumbers = function(number){
+                return number > 50;
+            }
+            const filtered = numbers.filter(functionToFilterNumbers);
+            console.log(filtered);
+            console.log(Math.max(...numbers));
+            console.log(Math.min(...numbers));
+
+        </script>
+    </head>
+    <body>
+    </body>
+</html>
