@@ -1,0 +1,80 @@
+* {
+    box-sizing: border-box;
+}
+div{
+    display: flex;
+    flex-wrap: wrap;
+    width: 1000px;
+    height: 530px;
+    background: linear-gradient(0.25turn, rgb(105, 253, 238), white, rgb(105, 253, 238));
+    border: 5px solid rgb(240, 196, 22);
+    box-shadow: rgb(223, 69, 141) 10px 10px 10px ;
+    border-radius: 40px;
+}
+div:hover{
+    transform:rotate(-5deg) ;
+    transition: all 6s;
+}
+div:active{
+transform: scale(0.5);
+}
+#section1{
+    width:400px;
+    height: 480px;
+    border:5px solid black;
+    border-radius: 15px;
+    margin: 15px;
+    padding: 5px;
+    text-align:center;
+    column-count:3;
+    column-gap:25px;
+    overflow:scroll;
+    overflow-y:hidden;
+    column-rule:3px solid red;
+    resize:both;
+    font-size: 16px;
+    float: left;
+    background: linear-gradient(0.25turn, greenyellow, white,greenyellow);
+}
+#section1:hover{
+    text-decoration: underline;
+}
+mark{
+    background-color: red;
+}
+mark:hover{
+    background: -webkit-linear-gradient(orangered, yellow);
+}
+mark:active{
+    background-color: greenyellow;
+}
+#section2{
+    width:500px;
+    height: 480px;
+    float: left;
+    background: linear-gradient(0.25turn, rgb(105, 253, 238), white, rgb(105, 253, 238));
+    border:5px solid rgb(51, 51, 241);
+    border-radius: 15px;
+    padding: 10px;
+    margin: 10px;
+    overflow-y:scroll ;
+}
+img{
+    width: 100px;
+    height: 100px;
+    margin: 5px;
+    border:3px solid rgb(51, 51, 241);
+    box-shadow: rgb(241, 94, 163) 5px 5px 5px;
+    border-radius: 8px;
+}
+img:hover{
+    transform: rotate(-10deg);
+    transition: all 2s
+}
+img:active{
+    opacity:1;
+    transform: scale(2.5);
+    border: hidden;
+    border-radius: 0%;
+    box-shadow: rgb(211, 51, 51) 5px 5px 5px;
+}

@@ -1,0 +1,89 @@
+<html>
+    <head>
+        <title> Movie Posters </title>
+    </head>
+    <style>
+        body {
+            background-color: white;
+            color: #FFF;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        .img-responsive {
+            width: 90vw;
+            max-width:500px;
+        }
+        h1 {
+            font-family:Arial, Helvetica, sans-serif;
+            font-size: 6rem;
+            color: #E50914;
+        }
+        .alert {
+            margin-top: 10px;
+        }
+        .container {
+            display: flex;
+            align-items: flex-start;
+            justify-content: center;
+            background: rgba(255, 255, 255, 0.2);
+            min-height: 100vh;
+            overflow:hidden;
+        }
+        .search {
+            flex: 1;
+            text-align: center;
+        }
+        button {
+            background-color: black;
+            border: 0;
+            color: white;
+            font-size: 2em;
+            padding: 10px;
+            margin-left: 0;
+            font-family:Arial, Helvetica, sans-serif;
+        }
+        input[type=text] {
+            background: rgba(255, 255, 255, 0.5);
+            outline: none;
+            border: 3px solid black;
+            color: black;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 2em;
+            padding: 8px;
+            margin-right: 0;
+            text-align:center;
+        }
+        #poster {
+            margin-top: 20px;
+        }
+        #poster p {
+            font-size: 2em;
+            color: black;
+        }
+        input:focus {
+            outline: none;
+        }
+        alert {
+            background-color: rgba(0, 0, 0, 0.95);
+            display: inline;
+            padding: 10px;
+            color: white;
+        }
+    </style>
+    <body>
+        <div class="container">
+            <div class="search">
+                <div class="logo">
+                <h1>Movie Poster</h1>
+                </div>
+                    <div id="fetch">
+                        <input type="text" placeholder="enter movie title here" id="term" />
+                        <button id="search">Find poster</button>
+                    </div>
+                    <div id="poster">
+                    </div>
+            </div>
+        </div>
+        <script src="jq.js"></script>
+        <script src="fetch api.js"></script>
+    </body>
+</html>
