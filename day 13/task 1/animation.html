@@ -1,0 +1,94 @@
+<html>
+<head>
+    <title> animation </title>
+    <style>
+        @keyframes animata{
+            0%{
+                top:20px;
+                left:20px;
+                background-color:rgb(255, 153, 0);
+            }
+            25%{
+                top:20px;
+                left:200px;
+                background-color:rgb(161, 236, 41);
+            }
+            75%{
+                top:200px;
+                left:200px;
+                background-color:rgb(0, 204, 255);
+            }
+            90%{
+                top:200px;
+                left:20px;
+                background-color:rgb(240, 217, 86);
+            }
+        }
+        button{
+            width: 100px;
+            height: 40px;
+            background-color: cornflowerblue;
+            color: white;
+            border: none;
+            margin: 20px;
+        }
+        button:hover{
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+        }
+        section{
+            position:absolute;
+            top:20px;
+            left:20px;
+            background-color:rgb(255, 153, 0);
+            width:180px;
+            height:100px;
+            margin: 60px;
+        }
+        .anim{
+            position:absolute;
+            top:20px;
+            left:20px;
+            background-color:rgb(255, 153, 0);
+            width:180px;
+            height:100px;
+            margin: 60px;
+            animation:animata;
+            animation-duration:10s;
+            animation-iteration-count:infinite;
+            
+        }
+        .anim:hover{
+            animation-play-state:paused;
+            transform: scale(1.1);
+        }
+
+    </style>
+</head>
+<body>
+    <div>
+        <button onclick="ani()"> Start </button>
+        <button id="restart"> Stop </button>
+        <button id="ani-toggle"> Pause </button>
+    </div>
+    <section id="shape">
+    </section>
+    <script>
+        function ani() {
+            document.getElementById('shape').className = 'anim';
+        }
+        const jstoggle = document.getElementById('ani-toggle');
+        jstoggle.addEventListener('click', () => {
+            const animations = document.querySelectorAll('.anim');
+            animations.forEach(animation => {
+                const running = animation.style.animationPlayState || 'running';
+                animation.style.animationPlayState = running === 'running' ? 'paused' : 'running';
+            })
+        });
+        document.querySelector("#restart").addEventListener('click', function() {
+            document.getElementById('shape').style.animation = 'none';
+            document.getElementById('shape').offsetWidth;
+            document.getElementById('shape').style.animation = null;
+        });
+    </script>
+</body>
+</html>

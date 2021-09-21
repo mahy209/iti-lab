@@ -1,0 +1,122 @@
+*{
+    padding:0;
+    margin:0;
+    box-sizing:border-box;
+}
+ul{
+    display:flex;
+    justify-content:space-around;
+    min-height:10vh;
+    align-items:center;
+}
+li{
+    list-style:none;
+}
+a{
+    text-decoration:none;
+    font:bold 15px verdana;
+    color:rgb(209, 28, 28);
+}
+a:hover{
+    color:rgb(182, 167, 167)
+}
+.cover{
+    background-image:url(images/laptop_top.jpg);
+    height:90vh;
+    background-position:center;
+    background-size:cover;
+    color:white;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+}
+.cover>h2{
+    text-align:center;
+    margin:2rem;
+}
+.cover>button{
+    padding:1.5rem 2rem;
+    border-radius:10px;
+    border:none;
+    background:-webkit-linear-gradient(top left,rgb(238, 226, 226),rgb(73, 166, 213));
+}
+.cover>button:hover{
+    cursor:pointer;
+    background:-webkit-linear-gradient(top left,rgb(73, 166, 213),rgb(238, 226, 226));
+}
+.introduction>.intro-img>img{
+    width:100%;
+    height:100%;
+}
+.introduction{
+    display:flex;
+    margin-top:1rem;
+    flex-wrap:wrap;
+}
+.introduction>.intro-img,.introduction>.intro-text{
+    flex:1 1 23rem;
+}
+.introduction> .intro-text{
+    background-color:rgb(232, 227, 227);
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:space-around;
+}
+.introduction> .intro-text>p{
+    width:80%;
+    text-align:left;
+}
+.tracks{
+    display:flex;
+    margin-top:1rem;
+    justify-content:space-around;
+    flex-wrap:wrap;
+}
+.tracks>.track>p{
+    font:bold 15px tahoma;
+    text-align:center;
+}
+.address{
+    justify-content:center;
+    align-items:center;
+    text-align: center;
+    margin-top:2rem;
+}
+.location>.map>img{
+    width: 100%;
+    height: 100%;
+}
+.location>.iti>table{
+    width: 100%;
+    height: 100%; 
+}
+.location{
+    display:flex;
+    margin-top:4rem;
+    flex-wrap:wrap; 
+    justify-content:space-around;
+}
+
+.location>.map,.location>.iti{
+    flex:1 1 30rem;
+}
+.contact{
+    background-color: rgb(58, 59, 61);
+    display: flex;
+    padding: 10px;
+    margin-top: 10px;
+}
+.social,.media{
+    flex: 1 1 20rem;
+}
+.branches{
+    background-color: rgb(211, 211, 211); 
+    text-align: center;
+}
+h4{
+    background: -webkit-linear-gradient(rgb(20, 128, 216), rgb(30, 38, 105));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
