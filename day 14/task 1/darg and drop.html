@@ -1,0 +1,78 @@
+<html>
+<head>
+<style>
+    div{
+        width: 900px;
+        height: 350px;
+        border: 3px solid #220033;
+        background-color: #dd99ff;
+    }
+section {
+    float: left;
+    width: 800px;
+    height: 100px;
+    margin: 10px;
+    padding: 20px;
+    border: 3px solid #220033;
+    }
+    img{
+        width:100px;
+        height:100px;
+        margin:10px;
+        border: 3px solid #220033;
+        }
+        img:hover{
+            transform: rotate(-30deg);
+        }
+</style>
+<script>
+    window.addEventListener('load', function () {
+        // get all images
+        allimages = document.images;
+        down = document.getElementById('down');
+        up = document.getElementById('up');
+        for (var i = 0; i < allimages.length; i++) {
+            allimages[i].addEventListener('dragstart', startdrag);
+            allimages[i].addEventListener('dragend', enddrag);
+        }
+        down.addEventListener('drop', dropped);
+        down.addEventListener('dragenter', enterdrag);
+        down.addEventListener('dragover', overdrag);
+        up.addEventListener('dragleave', leavedrag);
+    });//end of load
+    function startdrag(e) {
+        e.dataTransfer.setData('myimg', e.target.outerHTML);
+    }
+    function enddrag(e) {
+        e.preventDefault();
+        e.target.style.display = 'none';
+    }
+    function dropped(e) {
+        e.preventDefault();
+        down.innerHTML += e.dataTransfer.getData('myimg');
+    }
+    function enterdrag(e) {
+        e.preventDefault();
+        down.style.backgroundColor = '#cc66ff';
+    }
+    function overdrag(e) {
+        e.preventDefault();
+    }
+    function leavedrag(e) {
+        e.preventDefault();
+    }
+    </script>
+</head>
+<body>
+    <div>
+        <section id="up">
+            <img src="images/4211.jpg" />
+            <img src="images/baby1.jpeg" />
+            <img src="images/download.jpg" />
+            <img src="images/photo-1610122748280-d0ae76b10750.jpg" />
+            <img src="images/what-babies-think.jpg" />
+        </section>
+        <section id="down"></section>
+    </div>
+</body>
+</html>
