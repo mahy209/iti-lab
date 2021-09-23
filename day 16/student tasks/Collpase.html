@@ -1,0 +1,96 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width;initial-scale=1"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body{
+            padding-top:20px;
+            margin: 20px;
+        }
+        .container{
+            width: 600px;
+            height: 1000px;
+        }
+        #accrodion{
+            margin: 35px;
+            -webkit-transform: rotate(-90deg);
+            -ms-transform: rotate(-90deg);
+            transform: rotate(-90deg);
+        }
+        img{
+            width: 100px;
+            height: 100px;
+        }
+        #cardone {padding-top:50px;color: #fff; background-color: #673ab7;}
+        #cardtwo {padding-top:50px;color: #fff; background-color: #ff9800;}
+        #cardthree {padding-top:50px;color: #fff; background-color: #009688;}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <button id="button" class="btn btn-primary" data-toggle="collapse" data-target="#cardone">Show Card</button>
+        <div id="accrodion">
+            <div class="card">
+                <div class="card-header bg-light">
+                    <button class="btn btn-link " data-toggle="collapse" data-target="#cardone">CardOne</button>
+                </div>
+                <div id="cardone" class="collapse show" data-parent="#accrodion">
+                    <div class="card-body text-center m-auto">
+                        <img src="1.jpg" class="rounded-circle ml-2" />
+                        <img src="1.jpg" class="rounded-circle ml-2" />
+                        <img src="1.jpg" class="rounded-circle ml-2" />
+                        <img src="1.jpg" class="rounded-circle ml-2" />
+                    </div>
+                    <div class="card-footer">
+                        <p>Footer For CardOne</p>
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="card">
+                <div class="card-header bg-light">
+                    <button class="btn btn-link " data-toggle="collapse" data-target="#cardtwo">CardTwo</button>
+                </div>
+                <div id="cardtwo" class="collapse" data-parent="#accrodion">
+                    <div class="card-body text-center m-auto" >
+                        <img src="1.jpg" class="rounded-circle ml-2" />
+                        <img src="1.jpg" class="rounded-circle ml-2" />
+                        <img src="1.jpg" class="rounded-circle ml-2" />
+                        <img src="1.jpg" class="rounded-circle ml-2" />
+                    </div>
+                    <div class="card-footer">
+                        <p>Footer For CardTwo</p>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="card">
+                <div class="card-header bg-light">
+                    <button class="btn btn-link " data-toggle="collapse" data-target="#cardthree">CardThree</button>
+                </div>
+                <div id="cardthree" class="collapse" data-parent="#accrodion">
+                    <div class="card-body text-center m-auto">
+                        <img src="1.jpg" class="rounded-circle ml-2" />
+                        <img src="1.jpg" class="rounded-circle ml-2" />
+                        <img src="1.jpg" class="rounded-circle ml-2" />
+                        <img src="1.jpg" class="rounded-circle ml-2" />
+                    </div>
+                    <div class="card-footer">
+                        <p>Footer For CardThree</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+    <script src="js/JQuery-3.3.1.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.js"></script>
+</body>
+</html>

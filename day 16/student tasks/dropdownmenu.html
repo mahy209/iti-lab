@@ -1,0 +1,62 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title> Drop menu</title>
+    <meta name="viewport" content="width=device-width;initial-scale=1"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        body{
+            padding-top:10px;
+        }
+        .fa {
+            padding: 20px;
+            font-size: 30px;
+            width: 70px;
+            text-align: center;
+            text-decoration: none;
+            margin: 5px 2px;
+        }
+        .fa:hover {
+            opacity: 0.7;
+        }
+        .fa-facebook {
+            background: #3B5998;
+            color: white;
+        }
+        .fa-twitter {
+            background: #55ACEE;
+            color: white;
+        }
+        .fa-youtube {
+            background: #bb0000;
+            color: white;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="btn-group dropright">
+            <button type="button" class="btn btn-primary dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Show Dropright
+            </button>
+            <ul class="dropdown-menu">
+                <li class="dropdown-header">WebSitePages</li>
+                <li class="dropdown-item">Home</li>
+                <li class="dropdown-item">Contact</li>
+                <li class="dropdown-item">About</li>
+                <li class="dropdown-divider"></li>
+                <li class="dropdown-header">SocialPages</li>
+                <li class="dropdown-item"><a href="http://www.facebook.com" class="fa fa-facebook"></a></li>
+                <li class="dropdown-item"><a href="http://www.twitter.com" class="fa fa-twitter"></a></li>
+                <li class="dropdown-item"><a href="http://www.youtube.com" class="fa fa-youtube"></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="js/JQuery-3.3.1.js"></script>
+    <script src="js/popper.js"></script>
+    <script src="js/bootstrap.js"></script>
+</body>
+</html>
