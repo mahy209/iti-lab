@@ -37,7 +37,7 @@
         <div class="row bg-dark text-light justify-content-between p-2 align-items-baseline">
             <a href="#" style="color: yellow;text-decoration: none;" @click.prevent="iscartvisible=false">Products</a>
             <div class="d-flex align-items-baseline">
-                <p class="mx-2"> {{cart.items.length}} <template v-if="cart.items.length==1">Item</template> <template v-else>Items</template> total price {{getTotalPrice()}} $</p>
+                <p class="mx-2"> {{cart.items.length}} <template v-if="cart.items.length==1">Item</template> <template v-else>Items</template> total price {{currencyFormatter(getTotalPrice())}} </p>
                 <button class="btn btn-primary" @click="iscartvisible=true">Cart</button>
             </div>
         </div>
@@ -75,9 +75,29 @@
                         <td>{{item.product.price}}</td>
                         <td>{{item.quantity}}</td>
                         <td><button class="btn btn-success" :disabled="item.product.instock==0" @click="increaseit(item)">+</button> <button class="btn btn-danger" @click="decreaseit(item)">-</button></td>
-                        <td>{{item.product.price*item.quantity}}</td>
+                        <td>{{currencyFormatter(item.product.price*item.quantity)}}</td>
                     </tr>
                 </tbody>
+                <tfoot>
+                    <tr>
+                        <th colspan="4">
+                            Total
+                        </th>
+                        <th colspan="2">{{currencyFormatter(getTotalPrice())}}</th>
+                    </tr>
+                    <tr>
+                        <th colspan="4">
+                            Taxes
+                        </th>
+                        <th colspan="2">{{currencyFormatter(getTotalPrice()*0.2)}}</th>
+                    </tr>
+                    <tr>
+                        <th colspan="4">
+                            GrandTotal
+                        </th>
+                        <th colspan="2">{{currencyFormatter(getTotalPrice()*0.2+getTotalPrice())}}</th>
+                    </tr>
+                </tfoot>
             </table>
         </div>
     </div>
@@ -96,6 +116,14 @@
                 }
             }),
             methods:{
+                currencyFormatter(value){
+                    let formatter = Intl.NumberFormat("ar-EG", {
+                        style:"currency",
+                        currency:"EGP",
+                        minimumFractionDigits:0
+                    });
+                    return formatter.format(value);
+                },
                 addToCart(product){
                     if (!this.checkit(product)){
                         this.cart.items.push({product: product, quantity:1});
